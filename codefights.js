@@ -1,13 +1,13 @@
-"use strict";
+// n children have got m pieces of candy. They want to eat as much candy as they can, but each child must eat exactly the same amount of candy as any other child. Determine how many pieces of candy will be eaten by all the children together. Individual pieces of candy cannot be split.
 
-// Given an integer n, return the largest number that contains exactly n digits.
+// Example
 
-let nine = "9"
-function largestNumber(n) {
-  for (let i = 1; i < n ; i++) {
-    nine = nine + "9"
-  }
-  return parseInt(nine)
+// For n = 3 and m = 10, the output should be
+// candies(n, m) = 9.
+
+// Each child will eat 3 pieces. So the answer is 9.
+
+
+function candies(n, m) {
+    return m - (m % n)
 }
-
-largestNumber(7);
