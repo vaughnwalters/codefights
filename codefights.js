@@ -1,13 +1,13 @@
-"use strict"; 
-let stringSum = 0;
-function addTwoDigits(n) {
-  let stringNum = n.toString();
-  stringNum = stringNum.split('');
-  for (let i = 0; i<stringNum.length; i++) {
-    stringSum = parseInt(stringNum[i]) + stringSum 
+"use strict";
+
+// Given an integer n, return the largest number that contains exactly n digits.
+
+let nine = "9"
+function largestNumber(n) {
+  for (let i = 1; i < n ; i++) {
+    nine = nine + "9"
   }
-  console.log("stringSum", stringSum);
-  return stringSum
+  return parseInt(nine)
 }
 
-addTwoDigits(69);
+largestNumber(7);
