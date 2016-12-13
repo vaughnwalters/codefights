@@ -1,25 +1,23 @@
-// Given a divisor and a bound, find the largest integer N such that:
+// Consider integer numbers from 0 to n - 1 written down along the circle in such a way that the distance between any two neighbouring numbers is equal (note that 0 and n - 1 are neighbouring, too).
 
-// N is divisible by divisor.
-// N is less than or equal to bound.
-// N is greater than 0.
-// It is guaranteed that such a number exists.
+// Given n and firstNumber, find the number which is written in the radially opposite position to firstNumber.
 
 // Example
 
-// For divisor = 3 and bound = 10, the output should be
-// maxMultiple(divisor, bound) = 9.
+// For n = 10 and firstNumber = 2, the output should be
+// circleOfNumbers(n, firstNumber) = 7.
 
-// The largest integer divisible by 3 and not larger than 10 is 9.
 
-function maxMultiple(divisor, bound) {
-  if (bound % divisor === 0) {
-    return bound;
-  } else {
-    return bound - (bound % divisor);
+function circleOfNumbers(n, firstNumber) {
+  "use strict";
+  let halfway = n / 2
+  if (firstNumber > halfway) {
+    let answer = firstNumber - halfway
+    return answer
+  } else if (firstNumber < halfway) {
+    let answer = halfway + firstNumber
+    return answer
+  } else { 
+      return 0
   }
 }
-
-maxMultiple(3, 10)
-maxMultiple(6, 662)
-maxMultiple(25, 582394)
