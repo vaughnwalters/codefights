@@ -1,14 +1,28 @@
-// Your friend advised you to see a new performance in the most popular theater in the city. He knows a lot about art and his advice is usually good, but not this time: the performance turned out to be awfully dull. It's so bad you want to sneak out, which is quite simple, especially since the exit is located right behind your row to the left. All you need to do is climb over your seat and make your way to the exit.
+// Given a divisor and a bound, find the largest integer N such that:
 
-// The main problem is your shyness: you're afraid that you'll end up blocking the view (even if only for a couple of seconds) of all the people who sit behind you and in your column or the columns to your left. To gain some courage, you decide to calculate the number of such people and see if you can possibly make it to the exit without disturbing too many people.
-
-// Given the total number of rows and columns in the theater (nRows and nCols, respectively), and the row and column you're sitting in, return the number of people who sit strictly behind you and in your column or to the left, assuming all seats are occupied.
+// N is divisible by divisor.
+// N is less than or equal to bound.
+// N is greater than 0.
+// It is guaranteed that such a number exists.
 
 // Example
 
-// For nCols = 16, nRows = 11, col = 5 and row = 3, the output should be
-// seatsInTheater(nCols, nRows, col, row) = 96.
+// For divisor = 3 and bound = 10, the output should be
+// maxMultiple(divisor, bound) = 9.
 
-function seatsInTheater(nCols, nRows, col, row) {
-    return (nRows - row) * (nCols - col + 1)
+// The largest integer divisible by 3 and not larger than 10 is 9.
+
+function maxMultiple(divisor, bound) {
+  let remainder = 0;
+  if (bound % divisor === 0) {
+    return bound;
+  } else {
+    remainder = bound % divisor;
+    bound = bound - remainder;
+    return bound;
+  }
 }
+
+maxMultiple(3, 10)
+maxMultiple(6, 662)
+maxMultiple(25, 582394)
